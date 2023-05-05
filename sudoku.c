@@ -44,9 +44,53 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
-    return 1;
+    // Verificar filas
+    for(int i=0; i<9; i++){
+        int used[10] = {0}; // Inicializar arreglo de números usados
+        for(int j=0; j<9; j++){
+            int num = n->sudo[i][j];
+            if(num != 0){
+                if(used[num] == 1){ // Número ya fue usado en la fila
+                    return 0; // Estado inválido
+                }
+                used[num] = 1; // Marcar número como usado
+            }
+        }
+    }
+    
+    // Verificar columnas
+    for(int j=0; j<9; j++){
+        int used[10] = {0}; // Inicializar arreglo de números usados
+        for(int i=0; i<9; i++){
+            int num = n->sudo[i][j];
+            if(num != 0){
+                if(used[num] == 1){ // Número ya fue usado en la columna
+                    return 0; // Estado inválido
+                }
+                used[num] = 1; // Marcar número como usado
+            }
+        }
+    }
+    
+    // Verificar submatrices de 3x3
+    for(int k=0; k<9; k++){ // Recorrer todas las submatrices
+        int used[10] = {0}; // Inicializar arreglo de números usados
+        for(int i=k/3*3; i<k/3*3+3; i++){ // Recorrer filas de la submatriz
+            for(int j=k%3*3; j<k%3*3+3; j++){ // Recorrer columnas de la submatriz
+                int num = n->sudo[i][j];
+                if(num != 0){
+                    if(used[num] == 1){ // Número ya fue usado en la submatriz
+                        return 0; // Estado inválido
+                    }
+                    used[num] = 1; // Marcar número como usado
+                }
+            }
+        }
+    }
+    
+    return 1; // Estado válido
 }
+
 
 
 List* get_adj_nodes(Node* n){
@@ -60,7 +104,6 @@ List* get_adj_nodes(Node* n){
         {
           for(int k=1; k<=9; k++)
           {
-            n->sudo[i][j]=k;
             new_node = copy(n);
             new_node->sudo[i][j] = k;
             pushBack(list, new_node);
