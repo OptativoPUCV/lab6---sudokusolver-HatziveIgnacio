@@ -62,7 +62,7 @@ int is_valid(Node* n){
     for(int j=0; j<9; j++){
         int col[10] = {0}; // Inicializar arreglo de números usados
         for(int i=0; i<9; i++){
-            int col = n->sudo[i][j];
+            int num = n->sudo[i][j];
             if(num != 0){
                 if(col[num] == 1){ // Número ya fue usado en la columna
                     return 0; // Estado inválido
