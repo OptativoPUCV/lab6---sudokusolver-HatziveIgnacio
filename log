@@ -51,3 +51,14 @@ sudoku.c:64:31: error: ‘j’ undeclared (first use in this function)
 sudoku.c:64:31: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 b89d031
+Fri 05 May 2023 03:35:28 AM UTC: 
+ sudoku.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:56:25: error: ‘k’ undeclared (first use in this function)
+   56 |       for(int j=0; j<9; k++)
+      |                         ^
+sudoku.c:56:25: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+8bbae10
