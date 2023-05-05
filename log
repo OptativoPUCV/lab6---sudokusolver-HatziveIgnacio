@@ -121,3 +121,16 @@ sudoku.c:103:14: error: implicit declaration of function ‘isValid’; did you 
 cc1: all warnings being treated as errors
 Compilation failed
 de8cec5
+Fri 05 May 2023 03:42:52 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:103:14: error: too many arguments to function ‘is_valid’
+  103 |           if(is_valid(n, i, j, k)){
+      |              ^~~~~~~~
+sudoku.c:46:5: note: declared here
+   46 | int is_valid(Node* n){
+      |     ^~~~~~~~
+Compilation failed
+8c959de
