@@ -94,23 +94,31 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-  List* list=createList();
-  Node* new_node = copy(n);
-  for(int i=0; i<9; i++){
-    for(int j=0; j<9; j++){  
-      if(n->sudo[i][j]==0){
-        for(int k=1; k<=9; k++){
-          if(is_valid(n, i, j, k)){
-            new_node = copy(n);
-            new_node->sudo[i][j] = k;
-            pushBack(list, new_node);
-          }
-        }
-        break;
+   List* list=createList();
+
+   // Recorrer todas las casillas del nodo
+   for(int i=0; i<9; i++){
+      for(int j=0; j<9; j++){
+         if(n->sudo[i][j]==0){
+
+            // Aplicar las acciones al estado actual
+            for(int k=1; k<=9; k++){
+               Node* new_node = copy(n);
+               new_node->sudo[i][j] = k;
+
+               // Verificar si el nuevo estado es válido
+               if(is_valid(new_node)){
+                  pushBack(list, new_node);
+               } else {
+                  freeNode(new_node);
+               }
+            }
+            break;
+         }
       }
-    }
-  }
-  return list;
+   }
+
+   return list;
 }
 
 
