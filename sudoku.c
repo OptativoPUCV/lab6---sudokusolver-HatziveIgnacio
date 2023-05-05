@@ -75,7 +75,7 @@ int is_valid(Node* n){
     // Verificar submatrices de 3x3
     for(int k=0; k<9; k++){ // Recorrer todas las submatrices
         int used[10] = {0}; // Inicializar arreglo de números usados
-        for(int i=k/3*3; i<k/3*3+3; i++){ // Recorrer filas de la submatriz
+        for(int i=3*(k/3); i<3*(k%3) 3; i++){ // Recorrer filas de la submatriz
             for(int j=k%3*3; j<k%3*3+3; j++){ // Recorrer columnas de la submatriz
                 int num = n->sudo[i][j];
                 if(num != 0){
