@@ -142,7 +142,7 @@ Node* DFS(Node* n, int* cont){
     Node* current=NULL;
     List* adj_list=NULL;
     while(!top(S)){
-        current=pop(S);
+        current=top(S);
         if(is_final(current)){
             *cont = S->size;
             return current;

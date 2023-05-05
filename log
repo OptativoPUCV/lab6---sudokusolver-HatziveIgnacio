@@ -380,3 +380,16 @@ sudoku.c:153:34: error: ‘Node’ has no member named ‘data’
       |                                  ^~
 Compilation failed
 8b7070e
+Fri 05 May 2023 04:11:05 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:147:22: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  147 |             *cont = S->size;
+      |                      ^~
+sudoku.c:153:34: error: ‘Node’ has no member named ‘data’
+  153 |             adj_node=(Node*) node->data;
+      |                                  ^~
+Compilation failed
+0909ad0
