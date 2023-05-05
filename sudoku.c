@@ -95,7 +95,7 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
-    Node* new_node;
+    Node* nodoRemp;
     int condicion = 0;
     for(int i=0; i<9; i++)
     { // recorrer 
@@ -108,13 +108,13 @@ List* get_adj_nodes(Node* n){
           condicion=1;
           for(int k=1; k<=9; k++)
           {
-            new_node = copy(n);
-            new_node->sudo[i][j] = k;
-            if(is_valid(new_node))
+            nodoRemp = copy(n);
+            nodoRemp->sudo[i][j] = k;
+            if(is_valid(nodoRemp))
             {
-              pushBack(list, new_node);
+              pushBack(list, nodoRemp);
             } else {
-              free(new_node);
+              free(nodoRemp);
             }
           }
         }
