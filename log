@@ -279,3 +279,17 @@ Fri 05 May 2023 03:54:27 AM UTC:
  tests:  5|3
 total_score: 35/70
 e0cfd4a
+Fri 05 May 2023 03:54:51 AM UTC: 
+ sudoku.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c:113:2: error: data definition has no type or storage class [-Werror]
+  113 | }ist;
+      |  ^~~
+sudoku.c:113:2: error: type defaults to ‘int’ in declaration of ‘ist’ [-Werror=implicit-int]
+sudoku.c:114:1: error: expected identifier or ‘(’ before ‘}’ token
+  114 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+ed13f26
