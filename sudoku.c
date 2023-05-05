@@ -46,43 +46,43 @@ void print_node(Node* n){
 int is_valid(Node* n){
     // Verificar filas
     for(int i=0; i<9; i++){
-        int used[10] = {0}; // Inicializar arreglo de números usados
+        int filas[10] = {0}; // Inicializar arreglo de números usados
         for(int j=0; j<9; j++){
             int num = n->sudo[i][j];
             if(num != 0){
-                if(used[num] == 1){ // Número ya fue usado en la fila
+                if(filas[num] == 1){ // Número ya fue usado en la fila
                     return 0; // Estado inválido
                 }
-                used[num] = 1; // Marcar número como usado
+                filas[num] = 1; // Marcar número como usado
             }
         }
     }
     
     // Verificar columnas
     for(int j=0; j<9; j++){
-        int used[10] = {0}; // Inicializar arreglo de números usados
+        int col[10] = {0}; // Inicializar arreglo de números usados
         for(int i=0; i<9; i++){
-            int num = n->sudo[i][j];
+            int col = n->sudo[i][j];
             if(num != 0){
-                if(used[num] == 1){ // Número ya fue usado en la columna
+                if(col[num] == 1){ // Número ya fue usado en la columna
                     return 0; // Estado inválido
                 }
-                used[num] = 1; // Marcar número como usado
+                col[num] = 1; // Marcar número como usado
             }
         }
     }
     
     // Verificar submatrices de 3x3
     for(int k=0; k<9; k++){ // Recorrer todas las submatrices
-        int used[10] = {0}; // Inicializar arreglo de números usados
+        int matriz[10] = {0}; // Inicializar arreglo de números usados
         for(int i=k/3*3; i<k/3*3+3; i++){ // Recorrer filas de la submatriz
             for(int j=k%3*3; j<k%3*3+3; j++){ // Recorrer columnas de la submatriz
                 int num = n->sudo[i][j];
                 if(num != 0){
-                    if(used[num] == 1){ // Número ya fue usado en la submatriz
+                    if(matriz[num] == 1){ // Número ya fue usado en la submatriz
                         return 0; // Estado inválido
                     }
-                    used[num] = 1; // Marcar número como usado
+                    matriz[num] = 1; // Marcar número como usado
                 }
             }
         }
