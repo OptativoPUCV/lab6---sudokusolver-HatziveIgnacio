@@ -25,3 +25,18 @@ sudoku.c:65:38: error: statement with no effect [-Werror=unused-value]
 cc1: all warnings being treated as errors
 Compilation failed
 34bb3b9
+Fri 05 May 2023 03:35:02 AM UTC: 
+ sudoku.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:66:31: error: ‘j’ undeclared (first use in this function)
+   66 |             new_node->sudo[i][j] = k;
+      |                               ^
+sudoku.c:66:31: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:54:9: error: variable ‘nodeRemp’ set but not used [-Werror=unused-but-set-variable]
+   54 |   Node *nodeRemp =createNode();
+      |         ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+84130a9

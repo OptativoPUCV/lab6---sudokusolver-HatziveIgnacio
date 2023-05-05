@@ -57,17 +57,18 @@ List* get_adj_nodes(Node* n){
   for(int i=0; i<9; i++)
     {
       for(int k=0; k<9; k++)
+      {  
+        if(n->sudo[i][k]==0)
         {
-          if(n->sudo[i][k]==0)
+          for(int k=1; k<=9; k++)
           {
-            for(int valor = 1; valor<10; valor++)
-              {
-                nodeRemp->sudo[i][k] == valor;
-                pushBack(list, copy(nodeRemp));
-              }
+            Node* new_node = copy(n);
+            new_node->sudo[i][j] = k;
+            pushBack(list, new_node);
           }
-          return list;
         }
+        break;
+      }
     }
     return list;
 }
