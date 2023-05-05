@@ -109,8 +109,6 @@ List* get_adj_nodes(Node* n){
                // Verificar si el nuevo estado es válido
                if(is_valid(new_node)){
                   pushBack(list, new_node);
-               } else {
-                  freeNode(new_node);
                }
             }
             break;

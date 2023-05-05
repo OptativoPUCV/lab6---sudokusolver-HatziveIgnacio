@@ -146,3 +146,9 @@ sudoku.c:113:19: error: implicit declaration of function ‘freeNode’; did you
 cc1: all warnings being treated as errors
 Compilation failed
 ef43660
+Fri 05 May 2023 03:44:40 AM UTC: 
+ sudoku.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  5|3
+total_score: 35/70
+157d086
