@@ -104,10 +104,7 @@ List* get_adj_nodes(Node* n){
             for(int k=1; k<=9; k++){
                Node* new_node = copy(n);
                new_node->sudo[i][j] = k;
-
-               // Verificar si el nuevo estado es válido
-          
-                  pushBack(list, new_node);
+              pushBack(list, new_node);
                }
             }
             break;
