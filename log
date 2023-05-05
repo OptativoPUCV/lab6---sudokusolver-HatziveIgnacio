@@ -589,3 +589,61 @@ list.h:17:18: note: expected ‘List *’ but argument is of type ‘int *’
 cc1: all warnings being treated as errors
 Compilation failed
 aa6169d
+Fri 05 May 2023 11:05:55 PM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:147:7: error: statement with no effect [-Werror=unused-value]
+  147 |       *cont)++;
+      |       ^~~~~
+sudoku.c:147:12: error: expected ‘;’ before ‘)’ token
+  147 |       *cont)++;
+      |            ^
+      |            ;
+sudoku.c:147:12: error: expected statement before ‘)’ token
+sudoku.c:147:15: error: expected expression before ‘;’ token
+  147 |       *cont)++;
+      |               ^
+sudoku.c:152:7: error: unknown type name ‘list’; did you mean ‘List’?
+  152 |       list *lista = get_adj_nodes(current);
+      |       ^~~~
+      |       List
+sudoku.c:152:21: error: initialization of ‘int *’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  152 |       list *lista = get_adj_nodes(current);
+      |                     ^~~~~~~~~~~~~
+sudoku.c:153:19: error: passing argument 1 of ‘next’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  153 |       while (next(lista) != NULL)
+      |                   ^~~~~
+      |                   |
+      |                   int *
+In file included from test.c:4:
+list.h:17:18: note: expected ‘List *’ but argument is of type ‘int *’
+   17 | void* next(List* list);
+      |            ~~~~~~^~~~
+In file included from test.c:5:
+sudoku.c:155:27: error: passing argument 1 of ‘next’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  155 |         int matriz = next(lista);
+      |                           ^~~~~
+      |                           |
+      |                           int *
+In file included from test.c:4:
+list.h:17:18: note: expected ‘List *’ but argument is of type ‘int *’
+   17 | void* next(List* list);
+      |            ~~~~~~^~~~
+In file included from test.c:5:
+sudoku.c:155:22: error: initialization of ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  155 |         int matriz = next(lista);
+      |                      ^~~~
+sudoku.c:156:17: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  156 |         push(S, matriz);
+      |                 ^~~~~~
+      |                 |
+      |                 int
+In file included from test.c:4:
+list.h:33:27: note: expected ‘void *’ but argument is of type ‘int’
+   33 | void push(Stack* s, void* data);
+      |                     ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+385edbd
