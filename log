@@ -14,3 +14,14 @@ Fri 05 May 2023 02:34:22 AM UTC:
  tests:  0|5
 total_score: 0/70
 6a496ed
+Fri 05 May 2023 02:57:50 AM UTC: 
+ sudoku.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:65:38: error: statement with no effect [-Werror=unused-value]
+   65 |                 nodeRemp->sudo[i][k] == valor;
+      |                 ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+34bb3b9
