@@ -393,3 +393,9 @@ sudoku.c:153:34: error: ‘Node’ has no member named ‘data’
       |                                  ^~
 Compilation failed
 0909ad0
+Fri 05 May 2023 04:11:11 AM UTC: 
+ sudoku.c | 21 +--------------------
+ 1 file changed, 1 insertion(+), 20 deletions(-)
+ tests:  7|1
+total_score: 55/70
+69d2f51
