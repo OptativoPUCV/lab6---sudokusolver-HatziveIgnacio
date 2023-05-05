@@ -100,16 +100,21 @@ List* get_adj_nodes(Node* n){
    for(int i=0; i<9; i++){
       for(int j=0; j<9; j++){
          if(n->sudo[i][j]==0){
+
             // Aplicar las acciones al estado actual
             for(int k=1; k<=9; k++){
                Node* new_node = copy(n);
                new_node->sudo[i][j] = k;
-              pushBack(list, new_node);
+
+               // Verificar si el nuevo estado es válido
+               if(is_valid(new_node)){
+                  pushBack(list, new_node);
                }
             }
             break;
          }
       }
+   }
 
    return list;
 }
