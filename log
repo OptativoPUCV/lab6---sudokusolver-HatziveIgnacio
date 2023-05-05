@@ -511,3 +511,42 @@ list.h:17:18: note: expected ‘List *’ but argument is of type ‘int *’
 cc1: all warnings being treated as errors
 Compilation failed
 827eba6
+Fri 05 May 2023 11:04:34 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:147:7: error: statement with no effect [-Werror=unused-value]
+  147 |       *cont)++;
+      |       ^~~~~
+sudoku.c:147:12: error: expected ‘;’ before ‘)’ token
+  147 |       *cont)++;
+      |            ^
+      |            ;
+sudoku.c:147:12: error: expected statement before ‘)’ token
+sudoku.c:147:15: error: expected expression before ‘;’ token
+  147 |       *cont)++;
+      |               ^
+sudoku.c:152:7: error: unknown type name ‘list’; did you mean ‘List’?
+  152 |       list *lista = get_adj_nodes(current);
+      |       ^~~~
+      |       List
+sudoku.c:152:21: error: initialization of ‘int *’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  152 |       list *lista = get_adj_nodes(current);
+      |                     ^~~~~~~~~~~~~
+sudoku.c:153:14: error: ‘adj_node’ undeclared (first use in this function)
+  153 |       while (adj_node != NULL)
+      |              ^~~~~~~~
+sudoku.c:153:14: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:156:26: error: passing argument 1 of ‘next’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  156 |         adj_node =  next(lista);
+      |                          ^~~~~
+      |                          |
+      |                          int *
+In file included from test.c:4:
+list.h:17:18: note: expected ‘List *’ but argument is of type ‘int *’
+   17 | void* next(List* list);
+      |            ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e338269

@@ -153,7 +153,7 @@ Node* DFS(Node* n, int* cont){
       while (adj_node != NULL) 
       {
         push(S, adj_node);
-        adj_node = (Node*) next(lista);
+        adj_node =  next(lista);
       }
     }
     return NULL;
