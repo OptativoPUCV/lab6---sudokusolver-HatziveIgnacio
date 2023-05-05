@@ -139,13 +139,21 @@ int is_final(Node* n)
 Node* DFS(Node* n, int* cont){
     Stack* S=createStack();
     push(S, n);
+    *cont = 0;
     while(!top(S))
     {
       Node *current = top(S);
       pop(S);
+      *cont)++;
       if(is_valid(current))
       {
         return current; 
+      }
+      list *lista = get_adj_nodes(current);
+      while (adj_node != NULL) 
+      {
+        push(S, adj_node);
+        adj_node = (Node*) next(list);
       }
     }
     return NULL;

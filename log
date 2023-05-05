@@ -435,3 +435,40 @@ Fri 05 May 2023 10:55:09 PM UTC:
  tests:  7|1
 total_score: 55/70
 22a5e2a
+Fri 05 May 2023 11:03:44 PM UTC: 
+ sudoku.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:147:7: error: statement with no effect [-Werror=unused-value]
+  147 |       *cont)++;
+      |       ^~~~~
+sudoku.c:147:12: error: expected ‘;’ before ‘)’ token
+  147 |       *cont)++;
+      |            ^
+      |            ;
+sudoku.c:147:12: error: expected statement before ‘)’ token
+sudoku.c:147:15: error: expected expression before ‘;’ token
+  147 |       *cont)++;
+      |               ^
+sudoku.c:152:7: error: unknown type name ‘list’; did you mean ‘List’?
+  152 |       list *lista = get_adj_nodes(current);
+      |       ^~~~
+      |       List
+sudoku.c:152:21: error: initialization of ‘int *’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  152 |       list *lista = get_adj_nodes(current);
+      |                     ^~~~~~~~~~~~~
+sudoku.c:153:14: error: ‘adj_node’ undeclared (first use in this function)
+  153 |       while (adj_node != NULL)
+      |              ^~~~~~~~
+sudoku.c:153:14: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:156:33: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+  156 |         adj_node = (Node*) next(list);
+      |                                 ^~~~
+      |                                 List
+sudoku.c:152:13: error: unused variable ‘lista’ [-Werror=unused-variable]
+  152 |       list *lista = get_adj_nodes(current);
+      |             ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+68f6276
