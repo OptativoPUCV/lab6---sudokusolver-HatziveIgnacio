@@ -140,12 +140,12 @@ Node* DFS(Node* n, int* cont){
     Stack* S=createStack();
     push(S, n);
     *cont = 0;
-    while(!top(S))
+    while(top(S) != NULL)
     {
       Node *current = top(S);
       pop(S);
       (*cont)++;
-      if(is_valid(n))
+      if(is_valid(current))
       {
         return current; 
       }
