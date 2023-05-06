@@ -155,6 +155,7 @@ Node* DFS(Node* n, int* cont){
         int *matriz = (int *)next(lista);
         push(S, matriz);
       }
+      free(current);
     }
     return NULL;
 }
