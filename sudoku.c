@@ -142,23 +142,22 @@ Node* DFS(Node* n, int* cont){
     *cont = 0;
     while(top(S) != NULL)
     {
-      Node *current = top(S);
-      pop(S);
-      (*cont)++;
-      if(is_final(current))
-      {
-        return current; 
-      }
-      List *lista = get_adj_nodes(current);
-      int *matriz = first(lista);
-      if(lista != NULL) {
-        while (next(lista) != NULL) 
+        Node *current = top(S);
+        pop(S);
+        (*cont)++;
+        if(is_final(current))
         {
-          int *matriz = (int *)next(lista);
-          push(S, matriz);
+            return current; 
         }
-      clean(lista);
-      free(current);
+        List *lista = get_adj_nodes(current);
+        int *matriz = first(lista);
+        while (matriz != NULL) 
+        {
+            push(S, matriz);
+            matriz = next(lista);
+        }
+        clean(lista);
+        free(current);
     }
     return NULL;
 }
