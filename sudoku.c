@@ -150,6 +150,7 @@ Node* DFS(Node* n, int* cont){
         return current; 
       }
       List *lista = get_adj_nodes(current);
+      int *matriz = first(lista);
       if(lista != NULL) {
         while (next(lista) != NULL) 
         {
