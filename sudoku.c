@@ -150,11 +150,12 @@ Node* DFS(Node* n, int* cont){
         return current; 
       }
       List *lista = get_adj_nodes(current);
-      while (!is_empty(lista)) 
-      {
-        int *matriz = (int *)next(lista);
-        push(S, matriz);
-      }
+      if(lista != NULL) {
+        while (next(lista) != NULL) 
+        {
+          int *matriz = (int *)next(lista);
+          push(S, matriz);
+        }
       clean(lista);
       free(current);
     }
