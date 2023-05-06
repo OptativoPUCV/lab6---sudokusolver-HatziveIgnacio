@@ -158,7 +158,7 @@ Node* DFS(Node* n, int* cont){
       clean(lista);
       free(current);
     }
-    return;
+    return NULL;
 }
 
 
