@@ -145,7 +145,7 @@ Node* DFS(Node* n, int* cont){
       Node *current = top(S);
       pop(S);
       (*cont)++;
-      if(is_valid(current))
+      if(is_valid(n))
       {
         return current; 
       }
